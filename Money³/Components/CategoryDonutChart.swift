@@ -37,7 +37,7 @@ struct CategoryDonutChart: View {
                 .foregroundStyle(total.color)
                 .cornerRadius(10.0)
                 .annotation(position: .overlay) {
-                    if totalAmount > 0, total.amount / totalAmount >= 0.03 {
+                    if totalAmount > 0, total.amount / totalAmount >= 0.05 {
                         Text("$\(total.amount, specifier: "%.0f")")
                             .font(.headline)
                             .foregroundStyle(.white)
