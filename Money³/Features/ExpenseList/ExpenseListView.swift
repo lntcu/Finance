@@ -6,6 +6,7 @@ struct ExpenseListView: View {
     @Query(sort: \Expense.date, order: .reverse) private var expenses: [Expense]
     @State private var searchText = ""
     @State private var selectedCategory: ExpenseCategory?
+    @Environment(\.colorScheme) private var scheme
     
     var filteredExpenses: [Expense] {
         var result = expenses
@@ -71,14 +72,14 @@ struct ExpenseListView: View {
                                         Text(date)
                                             .padding(.horizontal, 15)
                                             .padding(.vertical, 10)
-                                            .glassEffect(.regular)
+                                            .glassEffect(.regular.tint(scheme == .dark ? .black.opacity(0.5) : .white.opacity(0.5)))
                                         Spacer()
                                         Text("$\(dayExpenses.reduce(0) { $0 + $1.amount }, specifier: "%.2f")")
                                             .fontWeight(.semibold)
                                         
                                         .padding(.horizontal, 15)
                                         .padding(.vertical, 10)
-                                            .glassEffect(.regular)
+                                        .glassEffect(.regular.tint(scheme == .dark ? .black.opacity(0.5) : .white.opacity(0.5)))
                                     }
                                     .safeAreaBar(edge: .top, content: {
                                         ScrollView(.horizontal, showsIndicators: false) {

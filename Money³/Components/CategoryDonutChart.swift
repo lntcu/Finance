@@ -28,7 +28,7 @@ struct CategoryDonutChart: View {
             }
             .padding(.horizontal)
 
-            Chart(totals) { total in
+            Chart(totals.filter( { $0.amount / totalAmount >= 0.02 } )) { total in
                 SectorMark(
                     angle: .value("Amount", total.amount),
                     innerRadius: .ratio(0.65),
