@@ -54,7 +54,7 @@ struct FloatingExpenseMenu: View {
                 .foregroundColor(type.tintColor)
                 .opacity(isExpanded ? 1 : 0)
         }
-        .glassEffect(.clear.tint(type.tintColor.opacity(0.1)).interactive())
+        .glassEffect(.regular.tint(type.tintColor.opacity(0.1)).interactive())
         .glassEffectID(type.label, in: glassNamespace)
         .offset(type.offset(expanded: isExpanded))
         .animation(.spring(duration: type.duration, bounce: 0.5).delay(type.delay), value: isExpanded)

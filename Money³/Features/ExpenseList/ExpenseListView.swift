@@ -79,27 +79,29 @@ struct ExpenseListView: View {
                     }
                     .frame(maxHeight: .infinity)
                 } else {
-                    List {
-                        ForEach(groupedExpenses, id: \.0) { date, dayExpenses in
-                            Section {
-                                ForEach(dayExpenses) { expense in
-                                    ExpenseRow(expense: expense)
-                                }
-                                .onDelete { indexSet in
-                                    deleteExpenses(at: indexSet, from: dayExpenses)
-                                }
-                            } header: {
-                                HStack {
-                                    Text(date)
-                                    Spacer()
-                                    Text("$\(dayExpenses.reduce(0) { $0 + $1.amount }, specifier: "%.2f")")
-                                        .fontWeight(.semibold)
+                    VStack(spacing: 16) {
+                        List {
+                            CategoryDonutChart(expenses: filteredExpenses)
+                            ForEach(groupedExpenses, id: \.0) { date, dayExpenses in
+                                Section {
+                                    ForEach(dayExpenses) { expense in
+                                        ExpenseRow(expense: expense)
+                                    }
+                                    .onDelete { indexSet in
+                                        deleteExpenses(at: indexSet, from: dayExpenses)
+                                    }
+                                } header: {
+                                    HStack {
+                                        Text(date)
+                                        Spacer()
+                                        Text("$\(dayExpenses.reduce(0) { $0 + $1.amount }, specifier: "%.2f")")
+                                            .fontWeight(.semibold)
+                                    }
                                 }
                             }
                         }
-                        
+                        .listStyle(.plain)
                     }
-                    .listStyle(.plain)
                 }
             }
             .navigationTitle("Expenses")
