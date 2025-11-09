@@ -10,9 +10,33 @@
 		CEF678652EC01D8F0071B1AD /* Finance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Finance.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
+/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
+		CEF679072EC025AA0071B1AD /* Exceptions for "Finance" folder in "Finance" target */ = {
+			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
+			membershipExceptions = (
+				Model.swift,
+			);
+			target = CEF678642EC01D8F0071B1AD /* Finance */;
+		};
+/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
+
+/* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+		CEF679082EC025AA0071B1AD /* Exceptions for "Finance" folder in "Copy Bundle Resources" phase from "Finance" target */ = {
+			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
+			buildPhase = CEF678632EC01D8F0071B1AD /* Resources */;
+			membershipExceptions = (
+				Model.swift,
+			);
+		};
+/* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
+
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		CEF678672EC01D8F0071B1AD /* Finance */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
+			exceptions = (
+				CEF679072EC025AA0071B1AD /* Exceptions for "Finance" folder in "Finance" target */,
+				CEF679082EC025AA0071B1AD /* Exceptions for "Finance" folder in "Copy Bundle Resources" phase from "Finance" target */,
+			);
 			path = Finance;
 			sourceTree = "<group>";
 		};
@@ -251,8 +275,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3QFGYML4B5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Uses camera.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Uses microphone.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Uses photo library.";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Uses speech recognition.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -282,8 +311,13 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 3QFGYML4B5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSCameraUsageDescription = "Uses camera.";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Uses microphone.";
+				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Uses photo library.";
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "Uses speech recognition.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
