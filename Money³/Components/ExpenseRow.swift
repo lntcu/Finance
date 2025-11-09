@@ -10,15 +10,13 @@ struct ExpenseRow: View {
     var body: some View {
         HStack(spacing: 16) {
             ZStack {
-                Circle()
-                    .fill(category.color.opacity(0.2))
-                    .frame(width: 50, height: 50)
-                
                 Image(systemName: category.icon)
                     .font(.title3)
                     .foregroundStyle(category.color)
+                    .padding()
             }
-            
+            .glassEffect(.clear.tint(category.color.opacity(0.5)), in: .circle)
+            .frame(width: 50, height: 50)
             VStack(alignment: .leading, spacing: 4) {
                 Text(expense.desc)
                     .font(.headline)
@@ -28,10 +26,8 @@ struct ExpenseRow: View {
                     Text(expense.category)
                         .font(.caption)
                         .foregroundStyle(.secondary)
-                    
                     Text("•")
                         .foregroundStyle(.secondary)
-                    
                     Text(expense.date.formatted(date: .omitted, time: .shortened))
                         .font(.caption)
                         .foregroundStyle(.secondary)
@@ -41,7 +37,7 @@ struct ExpenseRow: View {
             Spacer()
             
             Text("$\(expense.amount, specifier: "%.2f")")
-                .font(.headline)
+                .font(.title3)
                 .fontWeight(.semibold)
         }
         .padding(.vertical, 4)

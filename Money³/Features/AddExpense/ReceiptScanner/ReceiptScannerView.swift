@@ -16,9 +16,10 @@ struct ReceiptScannerView: View {
                         .resizable()
                         .scaledToFit()
                         .frame(maxHeight: 300)
-                        .cornerRadius(12)
+                        .cornerRadius(24)
+                        .padding(.horizontal)
                 } else {
-                    RoundedRectangle(cornerRadius: 12)
+                    RoundedRectangle(cornerRadius: 24)
                         .fill(Color(.systemGray6))
                         .frame(height: 300)
                         .overlay {
@@ -30,6 +31,7 @@ struct ReceiptScannerView: View {
                                     .foregroundStyle(.secondary)
                             }
                         }
+                        .padding(.horizontal)
                 }
                 
                 PhotosPicker(selection: $vm.selectedItem, matching: .images) {

@@ -99,7 +99,7 @@ struct ExpenseListView: View {
                         }
                         
                     }
-                    .listStyle(.insetGrouped)
+                    .listStyle(.plain)
                 }
             }
             .navigationTitle("Expenses")
