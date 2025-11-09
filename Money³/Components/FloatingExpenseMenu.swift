@@ -21,7 +21,7 @@ struct FloatingExpenseMenu: View {
                     }
                 } label: {
                     Label("Menu", systemImage: "plus.circle.fill")
-                        .font(.title2)
+                        .font(.title)
                         .labelStyle(.iconOnly)
                         .frame(width: 65, height: 65)
                         .foregroundColor(.white)

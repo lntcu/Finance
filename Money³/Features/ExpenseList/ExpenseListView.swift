@@ -46,7 +46,9 @@ struct ExpenseListView: View {
                             title: "All",
                             isSelected: selectedCategory == nil
                         ) {
-                            selectedCategory = nil
+                            withAnimation {
+                                selectedCategory = nil
+                            }
                         }
                         ForEach(ExpenseCategory.allCases, id: \.self) { category in
                             FilterChip(
@@ -56,9 +58,13 @@ struct ExpenseListView: View {
                                 isSelected: selectedCategory == category
                             ) {
                                 if selectedCategory == category {
-                                    selectedCategory = nil
+                                    withAnimation {
+                                        selectedCategory = nil
+                                    }
                                 } else {
-                                    selectedCategory = category
+                                    withAnimation {
+                                        selectedCategory = category
+                                    }
                                 }
                             }
                         }
@@ -81,7 +87,9 @@ struct ExpenseListView: View {
                 } else {
                     VStack(spacing: 16) {
                         List {
-                            CategoryDonutChart(expenses: filteredExpenses)
+                            if selectedCategory == nil {
+                                CategoryDonutChart(expenses: filteredExpenses)
+                            }
                             ForEach(groupedExpenses, id: \.0) { date, dayExpenses in
                                 Section {
                                     ForEach(dayExpenses) { expense in
@@ -100,6 +108,7 @@ struct ExpenseListView: View {
                                 }
                             }
                         }
+                        .transition(.identity.combined(with: .blurReplace.combined(with: .opacity)))
                         .listStyle(.plain)
                     }
                 }
