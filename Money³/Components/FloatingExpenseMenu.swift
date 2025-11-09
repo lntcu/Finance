@@ -21,11 +21,12 @@ struct FloatingExpenseMenu: View {
                     }
                 } label: {
                     Label("Menu", systemImage: "plus.circle.fill")
+                        .font(.title2)
                         .labelStyle(.iconOnly)
-                        .frame(width: 60, height: 60)
+                        .frame(width: 65, height: 65)
                         .foregroundColor(.white)
                 }
-                .glassEffect(.regular.tint(.blue).interactive())
+                .glassEffect(.clear.tint(.blue).interactive())
                 .glassEffectID("menu", in: glassNamespace)
             }
         }
@@ -47,15 +48,16 @@ struct FloatingExpenseMenu: View {
             }
         } label: {
             Label(type.label, systemImage: type.systemImage)
+                .font(.title3)
                 .labelStyle(.iconOnly)
                 .frame(width: 60, height: 60)
-                .foregroundColor(.gray)
+                .foregroundColor(type.tintColor)
                 .opacity(isExpanded ? 1 : 0)
         }
-        .glassEffect(.regular.tint(type.tintColor.opacity(0.8)).interactive())
+        .glassEffect(.clear.tint(type.tintColor.opacity(0.1)).interactive())
         .glassEffectID(type.label, in: glassNamespace)
         .offset(type.offset(expanded: isExpanded))
-        .animation(.spring(duration: type.duration, bounce: 0.2), value: isExpanded)
+        .animation(.spring(duration: type.duration, bounce: 0.5).delay(type.delay), value: isExpanded)
     }
 }
 

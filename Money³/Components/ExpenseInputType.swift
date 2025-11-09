@@ -37,7 +37,25 @@ enum ExpenseInputType: String {
     }
     
     var tintColor: Color {
-        return .white
+        switch self {
+        case .voiceInput:
+            return .red
+        case .receiptScanner:
+            return .green
+        case .manualEntry:
+            return .yellow
+        }
+    }
+    
+    var delay: Double {
+        switch self {
+        case .voiceInput:
+            return 0.05
+        case .receiptScanner:
+            return 0.1
+        case .manualEntry:
+            return 0.15
+        }
     }
     
     func offset(expanded: Bool) -> CGSize {
@@ -56,7 +74,7 @@ enum ExpenseInputType: String {
     }
     
     private func offset(atIndex index: Int, expanded: Bool) -> CGSize {
-        let radius: CGFloat = 120
+        let radius: CGFloat = 100
         let startAngleDeg = -180.0
         let step = 90.0 / Double(3 - 1)
         

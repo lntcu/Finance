@@ -18,8 +18,8 @@ struct FilterChip: View {
                     .font(.subheadline)
                     .fontWeight(.medium)
             }
-            .padding(.horizontal, 16)
-            .padding(.vertical, 8)
+            .padding(.horizontal, 10)
+            .padding(.vertical, 5)
             .foregroundStyle(.white)
             .cornerRadius(20)
         }
