@@ -64,6 +64,7 @@ struct VoiceInputView: View {
                 .disabled(vm.isProcessing)
                 .buttonStyle(.glassProminent)
                 .tint(vm.isRecording ? .red.opacity(0.5) : .blue.opacity(0.5))
+                .sensoryFeedback(.impact, trigger: vm.isRecording)
                 Button {
                     Task {
                         await vm.processWithAI(context: context)
@@ -82,6 +83,7 @@ struct VoiceInputView: View {
                 .disabled(vm.isProcessing)
                 .buttonStyle(.glassProminent)
                 .tint(.green.opacity(0.5))
+                .sensoryFeedback(.success, trigger: vm.processingComplete)
             }
             .padding()
             .navigationTitle("Voice Input")
@@ -92,6 +94,7 @@ struct VoiceInputView: View {
                         vm.cleanup()
                         dismiss()
                     }
+                    .sensoryFeedback(.warning, trigger: vm.isRecording)
                 }
             }
         }

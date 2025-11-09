@@ -63,6 +63,7 @@ struct ManualEntryView: View {
                     }
                     .listRowBackground(Color.blue.opacity(0.5))
                     .disabled(amount.isEmpty)
+                    .sensoryFeedback(.success, trigger: showingError)
                 }
             }
             .navigationTitle("Add Expense")
@@ -70,6 +71,7 @@ struct ManualEntryView: View {
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Cancel") { dismiss() }
+                        .sensoryFeedback(.warning, trigger: showingError)
                 }
             }
             .alert("Invalid Amount", isPresented: $showingError) {

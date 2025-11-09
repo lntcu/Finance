@@ -28,6 +28,7 @@ struct FloatingExpenseMenu: View {
                         .rotationEffect(.degrees(isExpanded ? 135 : 0))
                         .animation(.spring(bounce: 0.5), value: isExpanded)
                 }
+                .sensoryFeedback(.impact, trigger: isExpanded)
                 .glassEffect(.clear.tint(.blue.opacity(0.5)).interactive())
                 .glassEffectID("menu", in: glassNamespace)
             }
@@ -56,6 +57,9 @@ struct FloatingExpenseMenu: View {
                 .opacity(isExpanded ? 1 : 0)
                 .foregroundStyle(.secondary)
         }
+        .sensoryFeedback(.selection, trigger: showingVoiceInput)
+        .sensoryFeedback(.selection, trigger: showingReceiptScanner)
+        .sensoryFeedback(.selection, trigger: showingManualEntry)
         .glassEffect(.regular.interactive())
         .glassEffectID(type.label, in: glassNamespace)
         .offset(type.offset(expanded: isExpanded))

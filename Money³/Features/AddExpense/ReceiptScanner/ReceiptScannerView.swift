@@ -42,6 +42,7 @@ struct ReceiptScannerView: View {
                         .foregroundStyle(.white)
                         .glassEffect(.clear.tint(.blue.opacity(0.5)))
                 }
+                .sensoryFeedback(.selection, trigger: vm.selectedItem)
                 .padding(.horizontal)
                 .onChange(of: vm.selectedItem) { _, _ in
                     Task {
@@ -96,6 +97,7 @@ struct ReceiptScannerView: View {
                             .padding()
                             .foregroundStyle(.white)
                     }
+                    .sensoryFeedback(.success, trigger: vm.processingComplete)
                     .padding(.horizontal)
                     .buttonStyle(.glassProminent)
                     .tint(.green.opacity(0.5))
@@ -107,6 +109,7 @@ struct ReceiptScannerView: View {
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
                     Button("Cancel") { dismiss() }
+                        .sensoryFeedback(.warning, trigger: vm.isProcessing)
                 }
             }
         }

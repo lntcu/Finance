@@ -23,6 +23,7 @@ struct FilterChip: View {
             .padding(.vertical, 10)
             .foregroundStyle(scheme == .dark ? .white : color)
         }
+        .sensoryFeedback(.selection, trigger: isSelected)
         .glassEffect(.clear.tint(color.opacity(0.3)).interactive())
     }
 }

@@ -64,13 +64,13 @@ struct ExpenseListView: View {
                                     ForEach(dayExpenses) { expense in
                                         ExpenseRow(expense: expense)
                                     }
-                                    .onDelete { indexSet in
-                                        deleteExpenses(at: indexSet, from: dayExpenses)
-                                    }
-                                } header: {
-                                    HStack {
-                                        Text(date)
-                                            .padding(.horizontal, 15)
+                                                                         .onDelete { indexSet in
+                                                                             deleteExpenses(at: indexSet, from: dayExpenses)
+                                                                         }
+                                                                         .sensoryFeedback(.error, trigger: expenses.count)
+                                                                     } header: {
+                                                                         HStack {
+                                                                             Text(date)                                            .padding(.horizontal, 15)
                                             .padding(.vertical, 10)
                                             .glassEffect(.regular.tint(scheme == .dark ? .black.opacity(0.5) : .white.opacity(0.5)))
                                         Spacer()

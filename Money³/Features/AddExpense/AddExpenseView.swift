@@ -36,6 +36,7 @@ struct AddExpenseView: View {
                     .foregroundStyle(.white)
                     .buttonStyle(.glassProminent)
                     .tint(.blue.opacity(0.5))
+                    .sensoryFeedback(.selection, trigger: showingVoiceInput)
                     Button {
                         showingReceiptScanner = true
                     } label: {
@@ -51,6 +52,7 @@ struct AddExpenseView: View {
                     .foregroundStyle(.white)
                     .buttonStyle(.glassProminent)
                     .tint(.green.opacity(0.5))
+                    .sensoryFeedback(.selection, trigger: showingReceiptScanner)
                     
                     Button {
                         showingManualEntry = true
@@ -67,6 +69,7 @@ struct AddExpenseView: View {
                     .foregroundStyle(.white)
                     .buttonStyle(.glassProminent)
                     .tint(.purple.opacity(0.5))
+                    .sensoryFeedback(.selection, trigger: showingManualEntry)
                 }
                 .padding(.horizontal)
                 
