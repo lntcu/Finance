@@ -1,11 +1,3 @@
-//
-//  ManualEntryView.swift
-//  Finance
-//
-//  Created by user on 9/11/25.
-//
-
-
 import SwiftUI
 import SwiftData
 

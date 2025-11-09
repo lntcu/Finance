@@ -1,15 +1,17 @@
-//
-//  Model.swift
-//  Finance
-//
-//  Created by user on 9/11/25.
-//
-
 import Foundation
-import SwiftUI
+import SwiftData
 
-extension DashboardView {
-    func getCategoryTotals(from expenses: [Expense]) -> [CategoryTotal] {
+/// Service for managing expense data operations and analytics
+@Observable
+final class ExpenseService {
+    private let modelContext: ModelContext
+    
+    init(modelContext: ModelContext) {
+        self.modelContext = modelContext
+    }
+    
+    /// Calculate total spending by category
+    func calculateCategoryTotals(from expenses: [Expense]) -> [CategoryTotal] {
         let grouped = Dictionary(grouping: expenses) { $0.category }
         return grouped.map { cat, exps in
             let total = exps.reduce(0) { $0 + $1.amount }
@@ -18,14 +20,16 @@ extension DashboardView {
         }.sorted { $0.amount > $1.amount }
     }
     
-    func getDailySpending(from expenses: [Expense]) -> [(Date, Double)] {
+    /// Get daily spending series for analytics
+    func getDailySpendingSeries(from expenses: [Expense]) -> [(Date, Double)] {
         let cal = Calendar.current
         let grouped = Dictionary(grouping: expenses) { cal.startOfDay(for: $0.date) }
         return grouped.map { ($0.key, $0.value.reduce(0) { $0 + $1.amount }) }
             .sorted { $0.0 < $1.0 }
     }
     
-    func getFilteredExpenses(all expenses: [Expense], period: String) -> [Expense] {
+    /// Filter expenses by time period
+    func getFilteredExpenses(_ expenses: [Expense], period: String) -> [Expense] {
         let cal = Calendar.current
         let now = Date()
         
@@ -42,5 +46,17 @@ extension DashboardView {
         default:
             return expenses
         }
+    }
+    
+    /// Save an expense to the database
+    func saveExpense(_ expense: Expense) throws {
+        modelContext.insert(expense)
+        try modelContext.save()
+    }
+    
+    /// Delete an expense from the database
+    func deleteExpense(_ expense: Expense) throws {
+        modelContext.delete(expense)
+        try modelContext.save()
     }
 }

@@ -15,33 +15,9 @@
 		CEF679BB2EC04A9D0071B1AD /* Logo.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = Logo.icon; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		CEF679072EC025AA0071B1AD /* Exceptions for "Money³" folder in "Money³" target */ = {
-			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
-			membershipExceptions = (
-				Model.swift,
-			);
-			target = CEF678642EC01D8F0071B1AD /* Money³ */;
-		};
-/* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
-
-/* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
-		CEF679082EC025AA0071B1AD /* Exceptions for "Money³" folder in "Copy Bundle Resources" phase from "Money³" target */ = {
-			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
-			buildPhase = CEF678632EC01D8F0071B1AD /* Resources */;
-			membershipExceptions = (
-				Model.swift,
-			);
-		};
-/* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
-
 /* Begin PBXFileSystemSynchronizedRootGroup section */
 		CEF678672EC01D8F0071B1AD /* Money³ */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
-			exceptions = (
-				CEF679072EC025AA0071B1AD /* Exceptions for "Money³" folder in "Money³" target */,
-				CEF679082EC025AA0071B1AD /* Exceptions for "Money³" folder in "Copy Bundle Resources" phase from "Money³" target */,
-			);
 			path = "Money³";
 			sourceTree = "<group>";
 		};
@@ -283,7 +259,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 3QFGYML4B5;
+				DEVELOPMENT_TEAM = 6SLG9DB9N5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Money³";
@@ -301,7 +277,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = local.Finance;
+				PRODUCT_BUNDLE_IDENTIFIER = local.money3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;
@@ -321,7 +297,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 3QFGYML4B5;
+				DEVELOPMENT_TEAM = 6SLG9DB9N5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_CFBundleDisplayName = "Money³";
@@ -339,7 +315,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = local.Finance;
+				PRODUCT_BUNDLE_IDENTIFIER = local.money3;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRING_CATALOG_GENERATE_SYMBOLS = YES;
 				SWIFT_APPROACHABLE_CONCURRENCY = YES;

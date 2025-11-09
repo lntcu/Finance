@@ -1,11 +1,3 @@
-//
-//  VoiceInputView.swift
-//  Finance
-//
-//  Created by user on 9/11/25.
-//
-
-
 import SwiftUI
 import Speech
 import AVFoundation
@@ -33,9 +25,9 @@ struct VoiceInputView: View {
                 Text(vm.isRecording ? "Listening..." : "Tap to speak")
                     .font(.title2)
                     .fontWeight(.semibold)
-                if !vm.transcription.isEmpty {
+                if vm.transcription {
                     ScrollView {
-                        Text(vm.transcription)
+                        Text(vm.transcriptionText)
                             .padding()
                             .frame(maxWidth: .infinity, alignment: .leading)
                             .background(Color(.systemGray6))

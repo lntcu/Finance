@@ -1,14 +1,5 @@
-//
-//  Expense.swift
-//  Finance
-//
-//  Created by user on 9/11/25.
-//
-
-
 import Foundation
 import SwiftData
-import FoundationModels
 
 @Model
 final class Expense {

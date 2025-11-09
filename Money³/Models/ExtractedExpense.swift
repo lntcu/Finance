@@ -1,10 +1,3 @@
-//
-//  ExtractedExpense.swift
-//  Finance
-//
-//  Created by user on 9/11/25.
-//
-
 import FoundationModels
 import Foundation
 import SwiftUI
