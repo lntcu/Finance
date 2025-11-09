@@ -15,6 +15,7 @@ struct ContentView: View {
                 showingReceiptScanner: $showingReceiptScanner,
                 showingManualEntry: $showingManualEntry
             )
+            .padding(.bottom, 32)
         }
         .sheet(isPresented: $showingVoiceInput) {
             VoiceInputView()
@@ -26,4 +27,8 @@ struct ContentView: View {
             ManualEntryView()
         }
     }
+}
+
+#Preview {
+    ContentView()
 }

@@ -22,10 +22,10 @@ struct FloatingExpenseMenu: View {
                 } label: {
                     Label("Menu", systemImage: "plus.circle.fill")
                         .labelStyle(.iconOnly)
-                        .frame(width: 50, height: 50)
+                        .frame(width: 60, height: 60)
                         .foregroundColor(.white)
                 }
-                .glassEffect(.regular.tint(.purple.opacity(0.8)).interactive())
+                .glassEffect(.regular.tint(.blue).interactive())
                 .glassEffectID("menu", in: glassNamespace)
             }
         }
@@ -48,8 +48,8 @@ struct FloatingExpenseMenu: View {
         } label: {
             Label(type.label, systemImage: type.systemImage)
                 .labelStyle(.iconOnly)
-                .frame(width: 50, height: 50)
-//                .foregroundColor(Color.systemGray2)
+                .frame(width: 60, height: 60)
+                .foregroundColor(.gray)
                 .opacity(isExpanded ? 1 : 0)
         }
         .glassEffect(.regular.tint(type.tintColor.opacity(0.8)).interactive())
@@ -57,4 +57,10 @@ struct FloatingExpenseMenu: View {
         .offset(type.offset(expanded: isExpanded))
         .animation(.spring(duration: type.duration, bounce: 0.2), value: isExpanded)
     }
+}
+
+#Preview {
+    FloatingExpenseMenu(showingVoiceInput: .constant(false),
+                        showingReceiptScanner: .constant(false),
+                        showingManualEntry: .constant(false))
 }
