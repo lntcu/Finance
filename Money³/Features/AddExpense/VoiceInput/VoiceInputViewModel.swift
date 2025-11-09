@@ -10,7 +10,6 @@ final class VoiceInputViewModel {
     private let speechService = SpeechService()
     private let aiService = AIProcessingService()
     
-    // Expose speech service properties
     var isRecording: Bool {
         get { speechService.isRecording }
         set { speechService.isRecording = newValue }

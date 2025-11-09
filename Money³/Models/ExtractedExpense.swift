@@ -25,6 +25,8 @@ enum ExpenseCategory: String, CaseIterable {
     case utilities = "Utilities"
     case health = "Health"
     case education = "Education"
+    case income = "Income"
+    case travel = "Travel"
     case other = "Other"
     
     var icon: String {
@@ -36,19 +38,23 @@ enum ExpenseCategory: String, CaseIterable {
         case .utilities: return "bolt.fill"
         case .health: return "heart.fill"
         case .education: return "book.fill"
+        case .income: return "dollarsign.circle.fill"
+        case .travel: return "airplane.ticket.fill"
         case .other: return "questionmark.circle.fill"
         }
     }
     
     var color: Color {
         switch self {
-        case .food: return .orange
-        case .transport: return .blue
+        case .food: return .red
+        case .transport: return .orange
         case .shopping: return .purple
         case .entertainment: return .pink
         case .utilities: return .yellow
         case .health: return .red
         case .education: return .green
+        case .income: return .blue
+        case .travel: return .cyan
         case .other: return .gray
         }
     }

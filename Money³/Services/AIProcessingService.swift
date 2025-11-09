@@ -32,7 +32,7 @@ final class AIProcessingService {
             let session = LanguageModelSession(instructions: """
                 You are a financial assistant helping users track their expenses.
                 Extract expense information from natural language descriptions.
-                Categorize expenses into: Food, Transport, Shopping, Entertainment, Utilities, Health, Education, or Other.
+                Categorize expenses into: Food, Transport, Shopping, Entertainment, Utilities, Health, Education, Income, Travel, or Other.
                 If payment method is not mentioned, default to Cash.
                 """)
             
@@ -52,7 +52,7 @@ final class AIProcessingService {
             let session = LanguageModelSession(instructions: """
                 You are a receipt parser extracting expense information from OCR text.
                 Find the total amount, merchant name, and categorize the purchase.
-                Categories: Food, Transport, Shopping, Entertainment, Utilities, Health, Education, Other
+                Categories: Food, Transport, Shopping, Entertainment, Utilities, Health, Education, Income, Travel, Other
                 """)
             
             let response = try await session.respond(
@@ -94,6 +94,12 @@ final class AIProcessingService {
             category = .health
         } else if lower.contains("book") || lower.contains("course") || lower.contains("education") || 
                   lower.contains("tuition") {
+            category = .education
+        } else if lower.contains("revenue") || lower.contains("wage") || lower.contains("income") ||
+                    lower.contains("income") {
+            category = .education
+        } else if lower.contains("hotel") || lower.contains("plane") || lower.contains("travel") ||
+                    lower.contains("travel") {
             category = .education
         }
         
