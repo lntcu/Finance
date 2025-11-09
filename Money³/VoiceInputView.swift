@@ -21,10 +21,10 @@ struct VoiceInputView: View {
                 Spacer()
                 ZStack {
                     Circle()
-                        .fill(vm.isRecording ? Color.red.opacity(0.2) : Color.gray.opacity(0.2))
                         .frame(width: 200, height: 200)
                         .scaleEffect(vm.isRecording ? 1.1 : 1.0)
                         .animation(.easeInOut(duration: 0.8).repeatForever(autoreverses: true), value: vm.isRecording)
+                        .glassEffect(.clear.tint(vm.isRecording ? Color.red.opacity(0.2) : Color.gray.opacity(0.2)), in: .circle)
                     
                     Image(systemName: "mic.fill")
                         .font(.system(size: 80))
@@ -66,12 +66,12 @@ struct VoiceInputView: View {
                         .font(.headline)
                         .frame(maxWidth: .infinity)
                         .padding()
-                        .background(vm.isRecording ? Color.red : Color.blue)
                         .foregroundStyle(.white)
-                        .cornerRadius(16)
                 }
                 .padding(.horizontal)
                 .disabled(vm.isProcessing)
+                .buttonStyle(.glassProminent)
+                .tint(vm.isRecording ? .red.opacity(0.5) : .blue.opacity(0.5))
                 Button {
                     Task {
                         await vm.processWithAI(context: context)
@@ -84,12 +84,12 @@ struct VoiceInputView: View {
                         .font(.headline)
                         .frame(maxWidth: .infinity)
                         .padding()
-                        .background(.green)
                         .foregroundStyle(.white)
-                        .cornerRadius(16)
                 }
                 .padding(.horizontal)
                 .disabled(vm.isProcessing)
+                .buttonStyle(.glassProminent)
+                .tint(.green.opacity(0.5))
             }
             .padding()
             .navigationTitle("Voice Input")

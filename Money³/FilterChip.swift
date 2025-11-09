@@ -1,6 +1,12 @@
+//
+//  FilterChip.swift
+//  Finance
+//
+//  Created by user on 9/11/25.
+//
+
 import SwiftUI
 import SwiftData
-
 
 struct FilterChip: View {
     let title: String
@@ -22,22 +28,10 @@ struct FilterChip: View {
             }
             .padding(.horizontal, 16)
             .padding(.vertical, 8)
-            .background(isSelected ? color : Color(.systemGray6))
             .foregroundStyle(isSelected ? .white : .primary)
             .cornerRadius(20)
         }
-    }
-}
-
-import SwiftUI
-import SwiftData
-
-@main
-struct FinanceTrackerApp: App {
-    var body: some Scene {
-        WindowGroup {
-            ContentView()
-        }
-        .modelContainer(for: [Expense.self])
+        .buttonStyle(.glassProminent)
+        .tint(isSelected ? color.opacity(0.5) : .gray.opacity(0.5))
     }
 }

@@ -22,10 +22,12 @@ struct AddExpenseView: View {
         NavigationView {
             VStack(spacing: 30) {
                 Spacer()
-                
-                Text("Add Expense")
-                    .font(.largeTitle)
-                    .fontWeight(.bold)
+                HStack {
+                    Text("Add Expenses")
+                        .font(.title.bold())
+                        .padding()
+                    Spacer()
+                }
                 VStack(spacing: 20) {
                     Button {
                         showingVoiceInput = true
@@ -38,10 +40,10 @@ struct AddExpenseView: View {
                         }
                         .frame(maxWidth: .infinity)
                         .padding()
-                        .background(.blue.gradient)
-                        .foregroundStyle(.white)
-                        .cornerRadius(16)
                     }
+                    .foregroundStyle(.white)
+                    .buttonStyle(.glassProminent)
+                    .tint(.blue.opacity(0.5))
                     Button {
                         showingReceiptScanner = true
                     } label: {
@@ -51,12 +53,12 @@ struct AddExpenseView: View {
                             Text("Scan Receipt")
                                 .font(.headline)
                         }
-                        .frame(maxWidth: .infinity)
                         .padding()
-                        .background(.green.gradient)
-                        .foregroundStyle(.white)
-                        .cornerRadius(16)
+                        .frame(maxWidth: .infinity)
                     }
+                    .foregroundStyle(.white)
+                    .buttonStyle(.glassProminent)
+                    .tint(.green.opacity(0.5))
                     
                     Button {
                         showingManualEntry = true
@@ -67,12 +69,12 @@ struct AddExpenseView: View {
                             Text("Enter Manually")
                                 .font(.headline)
                         }
-                        .frame(maxWidth: .infinity)
                         .padding()
-                        .background(.purple.gradient)
-                        .foregroundStyle(.white)
-                        .cornerRadius(16)
+                        .frame(maxWidth: .infinity)
                     }
+                    .foregroundStyle(.white)
+                    .buttonStyle(.glassProminent)
+                    .tint(.purple.opacity(0.5))
                 }
                 .padding(.horizontal)
                 
@@ -88,6 +90,7 @@ struct AddExpenseView: View {
             .sheet(isPresented: $showingManualEntry) {
                 ManualEntryView()
             }
+            .navigationTitle("Add Expense")
         }
     }
 }

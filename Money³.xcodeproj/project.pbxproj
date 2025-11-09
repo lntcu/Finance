@@ -6,22 +6,27 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		CEF679BC2EC04A9D0071B1AD /* Logo.icon in Resources */ = {isa = PBXBuildFile; fileRef = CEF679BB2EC04A9D0071B1AD /* Logo.icon */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXFileReference section */
-		CEF678652EC01D8F0071B1AD /* Finance.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Finance.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEF678652EC01D8F0071B1AD /* Money³.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Money³.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEF679BB2EC04A9D0071B1AD /* Logo.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = Logo.icon; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFileSystemSynchronizedBuildFileExceptionSet section */
-		CEF679072EC025AA0071B1AD /* Exceptions for "Finance" folder in "Finance" target */ = {
+		CEF679072EC025AA0071B1AD /* Exceptions for "Money³" folder in "Money³" target */ = {
 			isa = PBXFileSystemSynchronizedBuildFileExceptionSet;
 			membershipExceptions = (
 				Model.swift,
 			);
-			target = CEF678642EC01D8F0071B1AD /* Finance */;
+			target = CEF678642EC01D8F0071B1AD /* Money³ */;
 		};
 /* End PBXFileSystemSynchronizedBuildFileExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
-		CEF679082EC025AA0071B1AD /* Exceptions for "Finance" folder in "Copy Bundle Resources" phase from "Finance" target */ = {
+		CEF679082EC025AA0071B1AD /* Exceptions for "Money³" folder in "Copy Bundle Resources" phase from "Money³" target */ = {
 			isa = PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet;
 			buildPhase = CEF678632EC01D8F0071B1AD /* Resources */;
 			membershipExceptions = (
@@ -31,13 +36,13 @@
 /* End PBXFileSystemSynchronizedGroupBuildPhaseMembershipExceptionSet section */
 
 /* Begin PBXFileSystemSynchronizedRootGroup section */
-		CEF678672EC01D8F0071B1AD /* Finance */ = {
+		CEF678672EC01D8F0071B1AD /* Money³ */ = {
 			isa = PBXFileSystemSynchronizedRootGroup;
 			exceptions = (
-				CEF679072EC025AA0071B1AD /* Exceptions for "Finance" folder in "Finance" target */,
-				CEF679082EC025AA0071B1AD /* Exceptions for "Finance" folder in "Copy Bundle Resources" phase from "Finance" target */,
+				CEF679072EC025AA0071B1AD /* Exceptions for "Money³" folder in "Money³" target */,
+				CEF679082EC025AA0071B1AD /* Exceptions for "Money³" folder in "Copy Bundle Resources" phase from "Money³" target */,
 			);
-			path = Finance;
+			path = "Money³";
 			sourceTree = "<group>";
 		};
 /* End PBXFileSystemSynchronizedRootGroup section */
@@ -56,7 +61,8 @@
 		CEF6785C2EC01D8F0071B1AD = {
 			isa = PBXGroup;
 			children = (
-				CEF678672EC01D8F0071B1AD /* Finance */,
+				CEF679BB2EC04A9D0071B1AD /* Logo.icon */,
+				CEF678672EC01D8F0071B1AD /* Money³ */,
 				CEF678662EC01D8F0071B1AD /* Products */,
 			);
 			sourceTree = "<group>";
@@ -64,7 +70,7 @@
 		CEF678662EC01D8F0071B1AD /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CEF678652EC01D8F0071B1AD /* Finance.app */,
+				CEF678652EC01D8F0071B1AD /* Money³.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -72,9 +78,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		CEF678642EC01D8F0071B1AD /* Finance */ = {
+		CEF678642EC01D8F0071B1AD /* Money³ */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = CEF678702EC01D910071B1AD /* Build configuration list for PBXNativeTarget "Finance" */;
+			buildConfigurationList = CEF678702EC01D910071B1AD /* Build configuration list for PBXNativeTarget "Money³" */;
 			buildPhases = (
 				CEF678612EC01D8F0071B1AD /* Sources */,
 				CEF678622EC01D8F0071B1AD /* Frameworks */,
@@ -85,13 +91,13 @@
 			dependencies = (
 			);
 			fileSystemSynchronizedGroups = (
-				CEF678672EC01D8F0071B1AD /* Finance */,
+				CEF678672EC01D8F0071B1AD /* Money³ */,
 			);
-			name = Finance;
+			name = "Money³";
 			packageProductDependencies = (
 			);
 			productName = Finance;
-			productReference = CEF678652EC01D8F0071B1AD /* Finance.app */;
+			productReference = CEF678652EC01D8F0071B1AD /* Money³.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -109,7 +115,7 @@
 					};
 				};
 			};
-			buildConfigurationList = CEF678602EC01D8F0071B1AD /* Build configuration list for PBXProject "Finance" */;
+			buildConfigurationList = CEF678602EC01D8F0071B1AD /* Build configuration list for PBXProject "Money³" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -123,7 +129,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				CEF678642EC01D8F0071B1AD /* Finance */,
+				CEF678642EC01D8F0071B1AD /* Money³ */,
 			);
 		};
 /* End PBXProject section */
@@ -133,6 +139,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEF679BC2EC04A9D0071B1AD /* Logo.icon in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -271,13 +278,15 @@
 		CEF678712EC01D910071B1AD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = Logo;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3QFGYML4B5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Money³";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Uses camera.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Uses microphone.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Uses photo library.";
@@ -307,13 +316,15 @@
 		CEF678722EC01D910071B1AD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = Logo;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 3QFGYML4B5;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Money³";
 				INFOPLIST_KEY_NSCameraUsageDescription = "Uses camera.";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Uses microphone.";
 				INFOPLIST_KEY_NSPhotoLibraryUsageDescription = "Uses photo library.";
@@ -343,7 +354,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		CEF678602EC01D8F0071B1AD /* Build configuration list for PBXProject "Finance" */ = {
+		CEF678602EC01D8F0071B1AD /* Build configuration list for PBXProject "Money³" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CEF6786E2EC01D910071B1AD /* Debug */,
@@ -352,7 +363,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		CEF678702EC01D910071B1AD /* Build configuration list for PBXNativeTarget "Finance" */ = {
+		CEF678702EC01D910071B1AD /* Build configuration list for PBXNativeTarget "Money³" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				CEF678712EC01D910071B1AD /* Debug */,

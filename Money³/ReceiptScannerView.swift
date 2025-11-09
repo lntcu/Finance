@@ -45,9 +45,8 @@ struct ReceiptScannerView: View {
                         .font(.headline)
                         .frame(maxWidth: .infinity)
                         .padding()
-                        .background(.blue)
                         .foregroundStyle(.white)
-                        .cornerRadius(12)
+                        .glassEffect(.clear.tint(.blue.opacity(0.5)))
                 }
                 .padding(.horizontal)
                 .onChange(of: vm.selectedItem) { _, _ in
@@ -101,11 +100,11 @@ struct ReceiptScannerView: View {
                             .font(.headline)
                             .frame(maxWidth: .infinity)
                             .padding()
-                            .background(.green)
                             .foregroundStyle(.white)
-                            .cornerRadius(12)
                     }
                     .padding(.horizontal)
+                    .buttonStyle(.glassProminent)
+                    .tint(.green.opacity(0.5))
                 }
             }
             .padding()

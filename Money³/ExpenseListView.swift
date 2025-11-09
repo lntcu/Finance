@@ -48,7 +48,6 @@ struct ExpenseListView: View {
     var body: some View {
         NavigationView {
             VStack(spacing: 0) {
-                // Category Filter
                 ScrollView(.horizontal, showsIndicators: false) {
                     HStack(spacing: 12) {
                         FilterChip(
@@ -57,7 +56,6 @@ struct ExpenseListView: View {
                         ) {
                             selectedCategory = nil
                         }
-                        
                         ForEach(ExpenseCategory.allCases, id: \.self) { category in
                             FilterChip(
                                 title: category.rawValue,
@@ -75,7 +73,6 @@ struct ExpenseListView: View {
                     }
                     .padding()
                 }
-                .background(Color(.systemBackground))
                 
                 if filteredExpenses.isEmpty {
                     VStack(spacing: 16) {
@@ -108,6 +105,7 @@ struct ExpenseListView: View {
                                 }
                             }
                         }
+                        
                     }
                     .listStyle(.insetGrouped)
                 }

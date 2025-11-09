@@ -69,7 +69,7 @@ struct ManualEntryView: View {
                             .frame(maxWidth: .infinity)
                             .foregroundStyle(.white)
                     }
-                    .listRowBackground(Color.blue)
+                    .listRowBackground(Color.blue.opacity(0.5))
                     .disabled(amount.isEmpty)
                 }
             }
