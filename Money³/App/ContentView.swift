@@ -2,15 +2,28 @@ import SwiftData
 import SwiftUI
 
 struct ContentView: View {
+    @State private var showingVoiceInput = false
+    @State private var showingReceiptScanner = false
+    @State private var showingManualEntry = false
+    
     var body: some View {
-        TabView {
-            Tab("Add", systemImage: "plus.circle.fill") {
-                AddExpenseView()
-            }
-
-            Tab("Expenses", systemImage: "list.bullet") {
-                ExpenseListView()
-            }
+        ZStack(alignment: .bottomTrailing) {
+            ExpenseListView()
+            
+            FloatingExpenseMenu(
+                showingVoiceInput: $showingVoiceInput,
+                showingReceiptScanner: $showingReceiptScanner,
+                showingManualEntry: $showingManualEntry
+            )
+        }
+        .sheet(isPresented: $showingVoiceInput) {
+            VoiceInputView()
+        }
+        .sheet(isPresented: $showingReceiptScanner) {
+            ReceiptScannerView()
+        }
+        .sheet(isPresented: $showingManualEntry) {
+            ManualEntryView()
         }
     }
 }
