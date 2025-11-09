@@ -20,7 +20,7 @@ struct FilterChip: View {
             }
             .padding(.horizontal, 16)
             .padding(.vertical, 8)
-            .foregroundStyle(isSelected ? .white : .primary)
+            .foregroundStyle(.white)
             .cornerRadius(20)
         }
         .buttonStyle(.glassProminent)
