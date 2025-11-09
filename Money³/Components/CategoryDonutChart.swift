@@ -32,12 +32,12 @@ struct CategoryDonutChart: View {
                 SectorMark(
                     angle: .value("Amount", total.amount),
                     innerRadius: .ratio(0.65),
-                    angularInset: 2.0
+                    angularInset: 2.0,
                 )
                 .foregroundStyle(total.color)
                 .cornerRadius(10.0)
                 .annotation(position: .overlay) {
-                    if totalAmount > 0, total.amount / totalAmount >= 0.06 {
+                    if totalAmount > 0, total.amount / totalAmount >= 0.03 {
                         Text("$\(total.amount, specifier: "%.0f")")
                             .font(.headline)
                             .foregroundStyle(.white)

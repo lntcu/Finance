@@ -39,39 +39,7 @@ struct ExpenseListView: View {
     
     var body: some View {
         NavigationView {
-            VStack(spacing: 0) {
-                ScrollView(.horizontal, showsIndicators: false) {
-                    HStack(spacing: 12) {
-                        FilterChip(
-                            title: "All",
-                            isSelected: selectedCategory == nil
-                        ) {
-                            withAnimation {
-                                selectedCategory = nil
-                            }
-                        }
-                        ForEach(ExpenseCategory.allCases, id: \.self) { category in
-                            FilterChip(
-                                title: category.rawValue,
-                                icon: category.icon,
-                                color: category.color,
-                                isSelected: selectedCategory == category
-                            ) {
-                                if selectedCategory == category {
-                                    withAnimation {
-                                        selectedCategory = nil
-                                    }
-                                } else {
-                                    withAnimation {
-                                        selectedCategory = category
-                                    }
-                                }
-                            }
-                        }
-                    }
-                    .padding()
-                }
-                
+            ZStack(alignment: .topLeading) {
                 if filteredExpenses.isEmpty {
                     VStack(spacing: 16) {
                         Image(systemName: "tray")
@@ -101,10 +69,50 @@ struct ExpenseListView: View {
                                 } header: {
                                     HStack {
                                         Text(date)
+                                            .padding(.horizontal, 15)
+                                            .padding(.vertical, 10)
+                                            .glassEffect(.regular)
                                         Spacer()
                                         Text("$\(dayExpenses.reduce(0) { $0 + $1.amount }, specifier: "%.2f")")
                                             .fontWeight(.semibold)
+                                        
+                                        .padding(.horizontal, 15)
+                                        .padding(.vertical, 10)
+                                            .glassEffect(.regular)
                                     }
+                                    .safeAreaBar(edge: .top, content: {
+                                        ScrollView(.horizontal, showsIndicators: false) {
+                                            HStack(spacing: 12) {
+                                                FilterChip(
+                                                    title: "All",
+                                                    isSelected: selectedCategory == nil
+                                                ) {
+                                                    withAnimation {
+                                                        selectedCategory = nil
+                                                    }
+                                                }
+                                                ForEach(ExpenseCategory.allCases, id: \.self) { category in
+                                                    FilterChip(
+                                                        title: category.rawValue,
+                                                        icon: category.icon,
+                                                        color: category.color,
+                                                        isSelected: selectedCategory == category
+                                                    ) {
+                                                        if selectedCategory == category {
+                                                            withAnimation {
+                                                                selectedCategory = nil
+                                                            }
+                                                        } else {
+                                                            withAnimation {
+                                                                selectedCategory = category
+                                                            }
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        .padding(.bottom)
+                                    })
                                 }
                             }
                         }

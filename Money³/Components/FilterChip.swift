@@ -6,24 +6,23 @@ struct FilterChip: View {
     var color: Color = .blue
     let isSelected: Bool
     let action: () -> Void
+    @Environment(\.colorScheme) private var scheme
     
     var body: some View {
         Button(action: action) {
             HStack(spacing: 6) {
                 if let icon = icon {
                     Image(systemName: icon)
-                        .font(.caption)
+                        .font(.headline)
                 }
                 Text(title)
-                    .font(.subheadline)
+                    .font(.headline)
                     .fontWeight(.medium)
             }
-            .padding(.horizontal, 10)
-            .padding(.vertical, 5)
-            .foregroundStyle(.white)
-            .cornerRadius(20)
+            .padding(.horizontal, 15)
+            .padding(.vertical, 10)
+            .foregroundStyle(scheme == .dark ? .white : color)
         }
-        .buttonStyle(.glassProminent)
-        .tint(isSelected ? color.opacity(0.5) : .gray.opacity(0.5))
+        .glassEffect(.clear.tint(color.opacity(0.3)).interactive())
     }
 }

@@ -36,17 +36,6 @@ enum ExpenseInputType: String {
         }
     }
     
-    var tintColor: Color {
-        switch self {
-        case .voiceInput:
-            return .red
-        case .receiptScanner:
-            return .green
-        case .manualEntry:
-            return .yellow
-        }
-    }
-    
     var delay: Double {
         switch self {
         case .voiceInput:

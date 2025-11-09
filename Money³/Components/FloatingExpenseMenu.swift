@@ -20,13 +20,15 @@ struct FloatingExpenseMenu: View {
                         isExpanded.toggle()
                     }
                 } label: {
-                    Label("Menu", systemImage: "plus.circle.fill")
+                    Label("Menu", systemImage: "plus")
                         .font(.title)
                         .labelStyle(.iconOnly)
-                        .frame(width: 65, height: 65)
+                        .frame(width: 60, height: 60)
                         .foregroundColor(.white)
+                        .rotationEffect(.degrees(isExpanded ? 135 : 0))
+                        .animation(.spring(bounce: 0.5), value: isExpanded)
                 }
-                .glassEffect(.clear.tint(.blue).interactive())
+                .glassEffect(.clear.tint(.blue.opacity(0.5)).interactive())
                 .glassEffectID("menu", in: glassNamespace)
             }
         }
@@ -51,10 +53,10 @@ struct FloatingExpenseMenu: View {
                 .font(.title3)
                 .labelStyle(.iconOnly)
                 .frame(width: 60, height: 60)
-                .foregroundColor(type.tintColor)
                 .opacity(isExpanded ? 1 : 0)
+                .foregroundStyle(.secondary)
         }
-        .glassEffect(.regular.tint(type.tintColor.opacity(0.1)).interactive())
+        .glassEffect(.regular.interactive())
         .glassEffectID(type.label, in: glassNamespace)
         .offset(type.offset(expanded: isExpanded))
         .animation(.spring(duration: type.duration, bounce: 0.5).delay(type.delay), value: isExpanded)
